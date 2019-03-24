@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Slide</title>
+  <body>
+    <style>
+    #pre-order
+    {
+      border-image-slice: 1;
+      border-width: 1px;
+      border-radius: 7.48px;
+    }
+
+    .preorder
+    {
+      /* border: 1px solid black; */
+      background-color: white;
+      /* border-color: #4CAF50; */
+      border-image: linear-gradient(to right, #f7941d, #f18f21 13%, #e0832f 31%, #c47045 51%, #9d5464 74%, #6c318b 97%, #662d91);
+      color: black;
+      border-radius: 7.48px;
+      padding: 14px 28px;
+      font-size: 16px;
+      cursor: pointer;
+      height: 100%;
+      font-weight: 500;
+      letter-spacing: 1px;
+
+    }
+    .preorder:hover{
+      border: 1px solid white;
+      border-radius: 6px;
+      background:linear-gradient(to right, #f7941d, #f18f21 13%, #e0832f 31%, #c47045 51%, #9d5464 74%, #6c318b 97%, #662d91);
+      color: white;
+      /* box-shadow: 0 6px 8px 0 rgba(0,0,0,0.12), 0 8px 25px 0 rgba(0,0,0,0.10); */
+    }
+    /* Slideshow container */
+    .slideshow-container {
+      position: relative;
+      background: white;
+      margin: auto;
+    }
+
+    /* Slides */
+    .mySlides {
+      display: none;
+      padding: 80px;
+      text-align: center;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -20px;
+      padding: 30px;
+      color: black;
+      font-weight: 100;
+      font-size: 50px;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      position:center;
+      right: 0;
+      border-radius: 2px 0 0 2px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      height: 70px;
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* The dot/bullet/indicator container */
+    .dot-container {
+      text-align: center;
+      padding: 20px;
+      background: white;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 8px;
+      width: 8px;
+
+      margin: 25px 2px;
+      background-color: white;
+      border-radius: 50%;
+      border: 1px solid black;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    /* Add a background color to the active dot/circle */
+    .active, .dot:hover {
+      background-color: yellow;
+    }
+
+    /* quotes */
+    p{
+      margin: -100px 10% 3% 10%;
+      /* margin-top: -100px; */
+      font-family: Lato;
+      font-weight: 300;
+      font-size: 34px;
+    }
+
+    /* SHIELD x */
+    .heading
+    {
+      font-family: Nexa;
+      font-weight: bold;
+      font-size: 120px;
+    }
+    </style>
+    </head>
+    <body>
+              <section class="slideshow-container">
+
+                <!-- Full-width slides/quotes -->
+                <div class="mySlides">
+                  <h1 class="heading">SHIELD X.0</h1>
+                  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, urna consequat felis vehicula class ultricies mollis dictumst, aenean non a in donec nulla.</p>
+              <button id="pre-order" class="preorder">PRE-ORDER NOW 0</button>
+                </div>
+
+                <div class="mySlides">
+                  <h1 class="heading">SHIELD X.1</h1>
+                  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, urna consequat felis vehicula class ultricies mollis dictumst, aenean non a in donec nulla.</p>
+              <button id="pre-order" class="preorder">PRE-ORDER NOW 1</button>
+                </div>
+
+                <div class="mySlides">
+                  <h1 class="heading">SHIELD X.2</h1>
+                  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, urna consequat felis vehicula class ultricies mollis dictumst, aenean non a in donec nulla.</p>
+                <button id="pre-order" class="preorder">PRE-ORDER NOW 2</button>
+              </div>
+
+                <!-- Next/prev buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              </div>
+
+              <!-- Dots/bullets/indicators -->
+              <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+              </section>
+
+    <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+  </body>
+</html>
